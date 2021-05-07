@@ -1,6 +1,3 @@
-import org.javamodularity.moduleplugin.ModuleSystemPlugin
-import org.javamodularity.moduleplugin.tasks.TestModuleOptions
-
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
@@ -23,7 +20,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
-    compile(project(":module-demo"))
+    implementation(project(":module-demo"))
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.hamcrest", module = "hamcrest-core")
         exclude(group = "org.hamcrest", module = "hamcrest-library")
@@ -51,7 +48,4 @@ subprojects {
 tasks.test {
     useJUnitPlatform()
 
-    extensions.configure(typeOf<TestModuleOptions>()) {
-        setRunOnClasspath(true)
-    }
 }

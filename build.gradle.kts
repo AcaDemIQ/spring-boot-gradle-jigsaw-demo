@@ -15,7 +15,7 @@ java {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -35,11 +35,12 @@ subprojects {
     apply(plugin = "org.javamodularity.moduleplugin")
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-web:${Config.boot_version}")
+//        implementation("org.springframework.boot:spring-boot-starter-jetty:${Config.boot_version}")
     }
 }
 
